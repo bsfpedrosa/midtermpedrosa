@@ -29,9 +29,9 @@ def update(request, post_id):
             context['form'] = form
             render(request, 'update.html', context)
     else:
-        #question = Question.objects.get(id=question_id)
+        #post = Post.objects.get(id=post_id)
         context['form'] = PostModelForm(instance=post)
-        #context['q_id'] = question_id
+        #context['p_id'] = post_id
     return render(request, 'update.html', context)
 
 
@@ -59,6 +59,6 @@ def comment(request):
             return redirect('/post/detail.html')
         else:
             context['form'] = form
-            render(request, 'create.html', context)
+            render(request, 'comment.html', context)
     else:
-        return render(request, 'create.html', context)
+        return render(request, 'comment.html', context)
